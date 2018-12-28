@@ -1,0 +1,200 @@
+@charset "UTF-8";
+html {
+  font-size: 100px; }
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: .14rem;
+  font-famliy: "微软雅黑";
+  box-sizing: border-box; }
+
+body {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none; }
+
+button,
+textarea,
+select,
+input {
+  appearance: none; }
+
+a {
+  top-highlight-color: rgba(0, 0, 0, 0); }
+
+html,
+body {
+  width: 100%;
+  height: 100%; }
+
+@font-face {
+  font-family: "iconfont";
+  src: url("../fonts1/iconfont.eot?t=1476059862");
+  /* IE9*/
+  src: url("../fonts1/iconfont.eot?t=1476059862#iefix") format("embedded-opentype"), url("../fonts1/iconfont.woff?t=1476059862") format("woff"), url("../fonts1/iconfont.ttf?t=1476059862") format("truetype"), url("../fonts1/iconfont.svg?t=1476059862#iconfont") format("svg");
+  /* iOS 4.1- */ }
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale; }
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column; }
+
+header {
+  width: 100%;
+  height: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 .2rem;
+  align-items: center;
+  background: #F2F2F2; }
+  header span input {
+    width: 3rem;
+    height: 0.3rem;
+    outline: none;
+    border: none;
+    background: #fff;
+    border-radius: .2rem;
+    text-indent: .2rem; }
+  header p {
+    width: 0.2rem;
+    height: 0.2rem;
+    background: #FF4D03;
+    border-radius: 50%;
+    text-align: center;
+    line-height: .2rem;
+    position: relative;
+    color: #fff;
+    top: -.1rem;
+    left: -.1rem; }
+
+.section-list-tilte {
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 .2rem;
+  align-items: center;
+  background: #F2F2F2; }
+  .section-list-tilte span {
+    padding-bottom: .1rem; }
+    .section-list-tilte span.active {
+      color: #FF4D03;
+      border-bottom: 1.5px solid #FF4D03; }
+
+.section-sort-main {
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 .2rem;
+  align-items: center;
+  position: relative; }
+  .section-sort-main span.color {
+    color: #FF4D03; }
+  .section-sort-main span img {
+    width: 20%;
+    height: auto;
+    margin-left: .08rem; }
+
+.alert-mark {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.68);
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  display: none; }
+
+.sort-kind-title {
+  width: 100%;
+  height: 1.8rem;
+  background: #fff; }
+  .sort-kind-title p {
+    margin-top: .2rem;
+    margin-left: .2rem; }
+    .sort-kind-title p.hue {
+      color: #FF4D03; }
+
+#not {
+  margin-top: 0; }
+
+section {
+  flex: 1;
+  overflow: scroll; }
+
+.wrapper-bscroll {
+  width: 100%;
+  height: 4rem;
+  overflow: hidden; }
+
+.section-bscroll-main {
+  width: 100%;
+  height: auto;
+  margin-top: .1rem;
+  display: flex;
+  padding: 0 .2rem;
+  flex-wrap: wrap; }
+  .section-bscroll-main dl {
+    width: 48%;
+    height: auto;
+    margin-left: .05rem; }
+    .section-bscroll-main dl dt img {
+      width: 80%;
+      height: auto; }
+    .section-bscroll-main dl dd b {
+      width: 1.5rem;
+      height: 0.2rem;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
+    .section-bscroll-main dl dd p {
+      display: flex;
+      justify-content: space-around; }
+      .section-bscroll-main dl dd p span {
+        color: #FF4D03;
+        border: 1px solid #ccc;
+        border-radius: .05rem; }
+      .section-bscroll-main dl dd p b {
+        width: 1rem;
+        height: 0.2rem;
+        display: inline-block;
+        font-weight: 400; }
+      .section-bscroll-main dl dd p i {
+        font-style: normal;
+        color: #666; }
+  .section-bscroll-main.title {
+    width: 100%; }
+    .section-bscroll-main.title dl {
+      width: 100%; }
+      .section-bscroll-main.title dl dt {
+        float: left; }
+        .section-bscroll-main.title dl dt img {
+          width: 1rem;
+          height: auto; }
+      .section-bscroll-main.title dl dd {
+        float: right; }
+        .section-bscroll-main.title dl dd p {
+          margin-top: .1rem; }
+
+footer {
+  width: 100%;
+  height: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 .2rem;
+  align-items: center;
+  font-size: .2rem;
+  background: #F2F2F2; }

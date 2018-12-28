@@ -5,6 +5,11 @@ let datas = require("./src/mock/data.json");
 let url = require("url");
 let fs = require("fs");
 let path = require("path");
+let bCss = require("gulp-clean-css");
+var concat = require('gulp-concat'); //合并文件
+var uglify = require('gulp-uglify'); //压缩js
+//var babel = require('gulp-babel');
+var htmlmin = require('gulp-htmlmin'); //压缩html插件
 
 //监听sass
 gulp.task('sass', function() {
@@ -63,4 +68,34 @@ gulp.task('webserver', function() {
                 }
             }
         }));
-});
+})
+
+
+gulp.task('bCss', function() {
+    return gulp.src('./src/css/*.css')
+        .pipe(bCss())
+        .pipe(gulp.dest('./build/css'))
+})
+
+
+//压缩js
+// gulp.task('bUglify', function() {
+//     return gulp.src(['./src/js/*.js', '!./src/libs/*.js'])
+//         .pipe(babel({
+//             presets: ['@babel/env']
+//         }))
+//         .pipe(uglify())
+//         .pipe(gulp.dest('./build/js'))
+// })
+
+
+//压缩html
+
+gulp.task('bHtmlmin', function() {
+    return gulp.src('./src/**/*.html')
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest('./build'))
+})
+
+//线上环境
+gulp.task('build', gulp.series('bUglify', 'bHtmlmin', 'bCss'))

@@ -145,7 +145,8 @@ section {
   margin-top: .1rem;
   display: flex;
   padding: 0 .2rem;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  position: relative; }
   .section-bscroll-main dl {
     width: 48%;
     height: auto;
@@ -188,6 +189,16 @@ section {
         float: right; }
         .section-bscroll-main.title dl dd p {
           margin-top: .1rem; }
+  .section-bscroll-main:after {
+    content: attr(title);
+    width: 100%;
+    height: 0.3rem;
+    display: block;
+    background: #ccc;
+    text-align: center;
+    position: absolute;
+    bottom: -.4rem;
+    left: 0; }
 
 footer {
   width: 100%;

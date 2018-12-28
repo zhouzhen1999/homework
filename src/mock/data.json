@@ -2,7 +2,7 @@
         "img": "./images/pic.jpg",
         "title": "[新品上市]冬季大毛呢鸭绒韩版",
         "money": "32",
-        "credit": "3"
+        "credit": "20"
     },
     {
         "img": "./images/pic2.jpg",
@@ -25,8 +25,8 @@
     {
         "img": "./images/pic2.jpg",
         "title": "[新品上市]冬季大毛呢鸭绒韩版",
-        "money": "32",
-        "credit": "3"
+        "money": "28",
+        "credit": "13"
     },
     {
         "img": "./images/pic3.jpg",
@@ -37,20 +37,20 @@
     {
         "img": "./images/pic.jpg",
         "title": "金凯迪饭店是地方",
-        "money": "32",
-        "credit": "3"
+        "money": "30",
+        "credit": "5"
     },
     {
         "img": "./images/pic2.jpg",
         "title": "[新品上市]冬季大毛呢鸭绒韩版",
-        "money": "32",
-        "credit": "3"
+        "money": "45",
+        "credit": "12"
     },
     {
         "img": "./images/pic3.jpg",
         "title": "代购加拿大羽绒服",
         "money": "134",
-        "credit": "5"
+        "credit": "7"
     },
     {
         "img": "./images/pic.jpg",
@@ -61,8 +61,8 @@
     {
         "img": "./images/pic2.jpg",
         "title": "[新品上市]冬季大毛呢鸭绒韩版",
-        "money": "32",
-        "credit": "3"
+        "money": "49",
+        "credit": "13"
     },
     {
         "img": "./images/pic3.jpg",
@@ -74,13 +74,13 @@
         "img": "./images/pic.jpg",
         "title": "金凯迪饭店是地方",
         "money": "32",
-        "credit": "3"
+        "credit": "32"
     },
     {
         "img": "./images/pic2.jpg",
         "title": "[新品上市]冬季大毛呢鸭绒韩版",
-        "money": "32",
-        "credit": "3"
+        "money": "23",
+        "credit": "19"
     }
 
 ]

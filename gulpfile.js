@@ -29,11 +29,32 @@ gulp.task('webserver', function() {
                     res.end("");
                     return
                 } else if (pathname == '/api/list') {
-                    let { pagenum, limit } = url.parse(req.url, true).query;
-                    var totle = Math.ceil(datas.length / limit);
+                    let { pagenum, limit, type, key } = url.parse(req.url, true).query;
+                    var arr = [];
+                    datas.forEach((i) => {
+                        if (i.title.match(key) != null) {
+                            arr.push(i)
+                        }
+                    })
+                    var targetData = arr.slice(0);
+                    if (type == "credit") {
+                        targetData.sort(function(a, b) {
+                            return a.credit - b.credit
+                        })
+                    } else if (type == "desc") {
+                        targetData.sort(function(a, b) {
+                            return b.money - a.money
+                        })
+                    } else if (type == "asc") {
+                        targetData.sort(function(a, b) {
+                            return a.money - b.money
+                        })
+                    }
+                    var totle = Math.ceil(targetData.length / limit);
                     var start = (pagenum - 1) * limit,
                         end = pagenum * limit;
-                    var target = datas.slice(start, end);
+                    var target = targetData.slice(start, end);
+                    console.log(target)
                     res.end(JSON.stringify({ code: 0, data: target, totle: totle }))
 
                 } else {

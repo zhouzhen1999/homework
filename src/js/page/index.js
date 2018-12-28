@@ -2,14 +2,18 @@ require(["./js/config.js"], function() {
     require(["bscroll", "jquery"], function(BScroll, $) {
         var pagenum = 1,
             limit = 5,
-            totle = 0;
+            totle = 0,
+            type = "",
+            key = "";
 
         function init() {
-            ajax();
-
+            ajax(type, key);
+            addevent()
         }
 
-        function ajax() {
+        function ajax(type) {
+            type = type || '';
+            key = key || "";
             $.ajax({
                 url: "/api/list",
                 dataType: "json",
@@ -17,7 +21,9 @@ require(["./js/config.js"], function() {
                 data: {
                     pagenum: pagenum,
                     limit: limit,
-                    totle
+                    totle,
+                    type: type,
+                    key: key
                 },
                 success: function(res) {
                     if (res.code == 0) {
@@ -38,7 +44,7 @@ require(["./js/config.js"], function() {
                                 <b>${i.title}</b>
                                 <p><span>门店</span><span>中国香港片</span></p>
                                 <p><i>新品</i><i>公益宝贝</i></p>
-                                <p><b>${i.money}</b><b>4342付款</b></p>
+                                <p><b>${i.money}</b><b>信用:${i.credit}</b></p>
                             </dd>
                         </dl>`;
             })
@@ -70,11 +76,37 @@ require(["./js/config.js"], function() {
             if ($(".section-bscroll-main").attr("title") == "释放加载更多") {
                 if (pagenum < totle) {
                     pagenum++;
-                    ajax()
+                    ajax(type, key)
                 }
             }
         })
 
+
+        function addevent() {
+            $("#tabs").on("click", function() {
+                $(".section-bscroll-main").toggleClass("title")
+            })
+
+            $("#all").on("click", function() {
+                $(".alert-mark").show()
+            })
+
+            $(".sort-kind-title p").on("click", function() {
+                pagenum = 1;
+                $(this).addClass("hue").siblings().removeClass("hue");
+                type = $(this).attr("data-type");
+                $(".section-bscroll-main").html("");
+                ajax(type, key);
+                $(".alert-mark").hide()
+            })
+
+            $("#inp").on("input", function() {
+                key = $(this).val().trim();
+                pagenum = 1;
+                $(".section-bscroll-main").html("");
+                ajax(type, key);
+            })
+        }
         init();
     })
 })

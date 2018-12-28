@@ -113,6 +113,7 @@ header {
   height: 100%;
   background: rgba(0, 0, 0, 0.68);
   position: absolute;
+  z-index: 99;
   top: 1rem;
   left: 0;
   display: none; }
@@ -179,16 +180,19 @@ section {
   .section-bscroll-main.title {
     width: 100%; }
     .section-bscroll-main.title dl {
-      width: 100%; }
-      .section-bscroll-main.title dl dt {
-        float: left; }
-        .section-bscroll-main.title dl dt img {
-          width: 1rem;
-          height: auto; }
-      .section-bscroll-main.title dl dd {
-        float: right; }
-        .section-bscroll-main.title dl dd p {
-          margin-top: .1rem; }
+      width: 100%;
+      display: flex; }
+      .section-bscroll-main.title dl dt img {
+        width: 1rem;
+        height: auto; }
+      .section-bscroll-main.title dl dd b {
+        margin-left: .1rem; }
+      .section-bscroll-main.title dl dd p {
+        margin-top: .1rem; }
+        .section-bscroll-main.title dl dd p b:nth-of-type(1) {
+          margin-left: .2rem; }
+        .section-bscroll-main.title dl dd p b:nth-of-type(2) {
+          margin-left: -.1rem; }
   .section-bscroll-main:after {
     content: attr(title);
     width: 100%;
